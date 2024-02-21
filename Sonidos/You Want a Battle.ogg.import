@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/You Want a Battle.ogg-5295f9d2446bbf0f91d62b002f57b1c2.oggstr"
+
+[deps]
+
+source_file="res://Sonidos/You Want a Battle.ogg"
+dest_files=[ "res://.import/You Want a Battle.ogg-5295f9d2446bbf0f91d62b002f57b1c2.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

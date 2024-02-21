@@ -1,0 +1,58 @@
+Mientras V > 50
+	Rad(N)
+	Mientras R > 0
+		Dis(N)
+		Rad(N)
+	Fin Mientras
+	Mientras R > -3
+		Mov(S)
+		Rad(N)
+	Fin Mientras
+	Rad(S)
+	Mientras R > 0
+		Dis(S)
+		Rad(S)
+	Fin Mientras
+	Rad(E)
+	Mientras R > 0
+		Dis(E)
+		Rad(E)
+	Fin Mientras
+	Mov(N)
+	Mov(N)
+	Par(O,3)
+	Mov(E)
+	Mov(E)
+	Dis(S)
+	Mov(S)
+	Mov(S)
+	Par(N,3)
+Fin Mientras
+Mientras V > 20
+	Mov(S)
+	Mov(S)
+	Mov(S)
+	Si M > 0 Entonces Min()
+	Mov(S)
+	Mov(S)
+	Dis(O)
+	Par(O,3)
+	Mov(N)
+	Mov(N)
+	Par(S,3)
+Fin Mientras
+Mientras V > 0
+	Min()
+	Mov(N)
+	Mov(E)
+	Mov(E)
+	Par(O,3)
+	Mov(S)
+	Mov(S)
+	Mov(S)
+	Mov(O)
+	Mov(O)
+	Mov(O)
+	Min()
+	Dis(N)
+Fin Mientras

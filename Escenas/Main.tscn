@@ -1,0 +1,192 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Sonidos/metal clic.wav" type="AudioStream" id=1]
+[ext_resource path="res://graphics/botones/Play-icon_i.png" type="Texture" id=2]
+[ext_resource path="res://graphics/botones/tut.png" type="Texture" id=3]
+[ext_resource path="res://graphics/botones/ajustes.png" type="Texture" id=4]
+[ext_resource path="res://graphics/botones/ajustes_s.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/Principal.gd" type="Script" id=6]
+[ext_resource path="res://graphics/botones/Play-icon.png" type="Texture" id=7]
+[ext_resource path="res://graphics/botones/Play-icon_s.png" type="Texture" id=8]
+[ext_resource path="res://graphics/botones/cod.png" type="Texture" id=9]
+[ext_resource path="res://graphics/botones/cod_i.png" type="Texture" id=10]
+[ext_resource path="res://graphics/botones/cod_s.png" type="Texture" id=11]
+[ext_resource path="res://graphics/botones/ajustes_i.png" type="Texture" id=12]
+[ext_resource path="res://graphics/botones/tut_i.png" type="Texture" id=13]
+[ext_resource path="res://graphics/botones/tut_s.png" type="Texture" id=14]
+[ext_resource path="res://fondos/wp1933957.png" type="Texture" id=15]
+[ext_resource path="res://graphics/tooltip.tres" type="Theme" id=16]
+[ext_resource path="res://graphics/botones/salir_i.png" type="Texture" id=17]
+[ext_resource path="res://graphics/botones/salir_s.png" type="Texture" id=18]
+[ext_resource path="res://graphics/botones/salir.png" type="Texture" id=19]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0666667, 0.0627451, 0.239216, 0.701961 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="Game" type="Node"]
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 15 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pantalla principal" type="Control" parent="Control"]
+anchor_left = 0.07
+anchor_top = 0.12
+anchor_right = 0.93
+anchor_bottom = 0.85
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Conf" type="TextureButton" parent="Control/Pantalla principal"]
+anchor_left = 0.886
+anchor_right = 1.0
+anchor_bottom = 0.202
+margin_left = 0.49115
+margin_bottom = 11.5568
+hint_tooltip = "Configuración"
+theme = ExtResource( 16 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 12 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Crear" type="TextureButton" parent="Control/Pantalla principal"]
+anchor_left = 0.818
+anchor_top = 0.644
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.345581
+margin_top = -0.0704346
+hint_tooltip = "Crear nuevo codigo"
+theme = ExtResource( 16 )
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 10 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tutorial" type="TextureButton" parent="Control/Pantalla principal"]
+anchor_top = 0.644
+anchor_right = 0.182
+anchor_bottom = 1.0
+margin_top = -0.0704651
+margin_right = -0.345612
+hint_tooltip = "Tutorial"
+theme = ExtResource( 16 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 14 )
+texture_hover = ExtResource( 13 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="TextureButton" parent="Control/Pantalla principal"]
+anchor_left = 0.322
+anchor_top = 0.15
+anchor_right = 0.678
+anchor_bottom = 0.85
+margin_left = -0.0576172
+margin_top = 0.0599899
+margin_right = 0.0575562
+margin_bottom = -0.0599976
+hint_tooltip = "Jugar"
+theme = ExtResource( 16 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 2 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="clac" type="AudioStreamPlayer" parent="Control/Pantalla principal"]
+stream = ExtResource( 1 )
+bus = "Click"
+
+[node name="Panel" type="Panel" parent="Control"]
+anchor_left = 0.98
+anchor_right = 1.0
+anchor_bottom = 0.035
+margin_left = -40.0
+margin_bottom = 40.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Salir" type="TextureButton" parent="Control/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 17 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="Control"]
+visible = false
+anchor_top = 0.1
+anchor_right = 0.3
+anchor_bottom = 0.2
+custom_styles/panel = SubResource( 2 )
+
+[node name="panel" type="Panel" parent="Control/Panel2"]
+anchor_left = 0.87
+anchor_top = 0.2
+anchor_right = 0.97
+anchor_bottom = 0.8
+margin_left = -12.0
+custom_styles/panel = SubResource( 3 )
+
+[node name="recomendacion" type="TextureButton" parent="Control/Panel2/panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 17 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/Panel2"]
+anchor_left = 0.1
+anchor_right = 0.82
+anchor_bottom = 1.0
+text = "¿Nuevo?
+Te recomendamos ver el tutorial"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Control/Pantalla principal/Conf" to="Control/Pantalla principal" method="_on_Conf_pressed"]
+[connection signal="pressed" from="Control/Pantalla principal/Crear" to="Control/Pantalla principal" method="_on_Crear_pressed"]
+[connection signal="pressed" from="Control/Pantalla principal/Tutorial" to="Control/Pantalla principal" method="_on_Tutorial_pressed"]
+[connection signal="pressed" from="Control/Pantalla principal/Play" to="Control/Pantalla principal" method="_on_Play_pressed"]
+[connection signal="pressed" from="Control/Panel/Salir" to="Control/Pantalla principal" method="_on_Salir_pressed"]
+[connection signal="pressed" from="Control/Panel2/panel/recomendacion" to="Control/Pantalla principal" method="_on_recomendacion_pressed"]

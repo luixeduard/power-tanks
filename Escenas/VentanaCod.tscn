@@ -1,0 +1,2007 @@
+[gd_scene load_steps=38 format=2]
+
+[ext_resource path="res://graphics/botones/returns.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/CrearCod.gd" type="Script" id=2]
+[ext_resource path="res://Font/DynamicFonts/Fuente30.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Font/BKANT.TTF" type="DynamicFontData" id=4]
+[ext_resource path="res://Font/DynamicFonts/Fuente50.tres" type="DynamicFont" id=5]
+[ext_resource path="res://graphics/botones/returni.png" type="Texture" id=6]
+[ext_resource path="res://graphics/botones/return.png" type="Texture" id=7]
+[ext_resource path="res://graphics/botones/BRv.png" type="Texture" id=8]
+[ext_resource path="res://graphics/botones/BRvs.png" type="Texture" id=9]
+[ext_resource path="res://graphics/botones/BRvi.png" type="Texture" id=10]
+[ext_resource path="res://Sonidos/metal clic.wav" type="AudioStream" id=11]
+[ext_resource path="res://fondos/codigo.jpg" type="Texture" id=12]
+[ext_resource path="res://Font/DynamicFonts/Fuente26.tres" type="DynamicFont" id=13]
+[ext_resource path="res://graphics/tooltip.tres" type="Theme" id=14]
+[ext_resource path="res://shaders/blur.shader" type="Shader" id=15]
+[ext_resource path="res://graphics/themaSpinBox.tres" type="Theme" id=16]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 15 )
+shader_param/amount = null
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 4 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 15 )
+shader_param/amount = 2.0
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0.0156863, 0.101961, 0.815686 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.603922, 0.0862745, 0.0862745, 0.752941 )
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.247059, 0.235294, 0.901961, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0666667, 0.0627451, 0.239216, 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.247059, 0.235294, 0.901961, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.0666667, 0.0627451, 0.239216, 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.247059, 0.235294, 0.901961, 1 )
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color( 0.0666667, 0.0627451, 0.239216, 1 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.247059, 0.235294, 0.901961, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.0666667, 0.0627451, 0.239216, 1 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.247059, 0.235294, 0.901961, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.0666667, 0.0627451, 0.239216, 1 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0, 0.0156863, 0.101961, 1 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.0156863, 0.0784314, 0.176471, 0.803922 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.0156863, 0.0784314, 0.176471, 1 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.0156863, 0.0784314, 0.176471, 1 )
+border_width_left = 4
+border_width_right = 4
+border_color = Color( 0.247059, 0.235294, 0.901961, 1 )
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0.0156863, 0.0784314, 0.176471, 0.827451 )
+
+[sub_resource type="Theme" id=21]
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = SubResource( 11 )
+Button/styles/normal = SubResource( 12 )
+Button/styles/pressed = SubResource( 13 )
+LineEdit/colors/clear_button_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
+LineEdit/colors/cursor_color = Color( 0.94, 0.94, 0.94, 1 )
+LineEdit/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color_uneditable = Color( 0.88, 0.88, 0.88, 0.5 )
+LineEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
+LineEdit/constants/minimum_spaces = 12
+LineEdit/fonts/font = null
+LineEdit/icons/clear = null
+LineEdit/styles/focus = SubResource( 14 )
+LineEdit/styles/normal = SubResource( 15 )
+LineEdit/styles/read_only = null
+OptionButton/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+OptionButton/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+OptionButton/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+OptionButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+OptionButton/constants/arrow_margin = 2
+OptionButton/constants/hseparation = 2
+OptionButton/fonts/font = null
+OptionButton/icons/arrow = null
+OptionButton/styles/disabled = null
+OptionButton/styles/focus = null
+OptionButton/styles/hover = null
+OptionButton/styles/normal = SubResource( 16 )
+OptionButton/styles/pressed = null
+Panel/styles/panel = SubResource( 17 )
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/styles/grabber = SubResource( 18 )
+VScrollBar/styles/grabber_highlight = null
+VScrollBar/styles/grabber_pressed = null
+VScrollBar/styles/scroll = SubResource( 19 )
+VScrollBar/styles/scroll_focus = null
+WindowDialog/colors/title_color = Color( 0, 0, 0, 1 )
+WindowDialog/constants/close_h_ofs = 18
+WindowDialog/constants/close_v_ofs = 18
+WindowDialog/constants/scaleborder_size = 4
+WindowDialog/constants/title_height = 20
+WindowDialog/fonts/title_font = null
+WindowDialog/icons/close = null
+WindowDialog/icons/close_highlight = null
+WindowDialog/styles/panel = SubResource( 20 )
+
+[node name="Node" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+anchor_left = 0.07
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Control"]
+modulate = Color( 0.4, 0.580392, 0.921569, 1 )
+self_modulate = Color( 0.152941, 0.372549, 0.627451, 1 )
+light_mask = 0
+material = SubResource( 1 )
+anchor_right = 0.65
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Control/Panel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -25.0
+margin_bottom = 43.0
+hint_tooltip = "¿Necesitas modificar?
+Marca la línea y presiona el comando
+¿Necesitas agregar una línea entre comandos?
+Marca la línea y presiona enter"
+theme = ExtResource( 14 )
+custom_fonts/font = ExtResource( 3 )
+text = "?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Instrucciones" type="TextEdit" parent="Control/Panel"]
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.8
+margin_left = -1.12194
+margin_top = -1.12195
+margin_right = -1.12189
+margin_bottom = -1.12195
+custom_fonts/font = SubResource( 2 )
+readonly = true
+show_line_numbers = true
+breakpoint_gutter = true
+selecting_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel"]
+anchor_left = 0.2
+anchor_top = 1.0
+anchor_right = 0.4
+anchor_bottom = 1.0
+margin_left = -62.5
+margin_top = -77.7599
+margin_right = 62.5
+custom_constants/separation = 20
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Abrir" type="TextureButton" parent="Control/Panel/VBoxContainer"]
+margin_top = 13.0
+margin_right = 271.0
+margin_bottom = 63.0
+rect_min_size = Vector2( 0, 50 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/Panel/VBoxContainer/Abrir"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -135.5
+margin_top = -25.0
+margin_right = 135.5
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 3 )
+text = "Abrir"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/Panel"]
+anchor_left = 0.6
+anchor_top = 1.0
+anchor_right = 0.8
+anchor_bottom = 1.0
+margin_left = -62.5
+margin_top = -77.7599
+margin_right = 62.5
+custom_constants/separation = 20
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Guardar" type="TextureButton" parent="Control/Panel/VBoxContainer2"]
+margin_top = 13.0
+margin_right = 271.0
+margin_bottom = 63.0
+rect_min_size = Vector2( 0, 50 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/Panel/VBoxContainer2/Guardar"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -135.5
+margin_top = -25.0
+margin_right = 135.5
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 3 )
+text = "Guardar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ComandosBasicos" type="Panel" parent="Control"]
+material = SubResource( 3 )
+anchor_left = 0.7
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ComandosBasicos"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -135.168
+margin_top = -300.0
+margin_right = 135.168
+margin_bottom = 300.0
+custom_constants/separation = 30
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mov" type="TextureButton" parent="Control/ComandosBasicos/VBoxContainer"]
+margin_top = 35.0
+margin_right = 270.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 0, 40 )
+hint_tooltip = "Comando para mover el tanque hacia una dirección"
+theme = ExtResource( 14 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/ComandosBasicos/VBoxContainer/Mov"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.82837
+margin_top = 2.82843
+margin_right = -2.82837
+margin_bottom = 2.82843
+custom_fonts/font = ExtResource( 3 )
+text = "Mover"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Disp" type="TextureButton" parent="Control/ComandosBasicos/VBoxContainer"]
+margin_top = 105.0
+margin_right = 270.0
+margin_bottom = 145.0
+rect_min_size = Vector2( 0, 40 )
+hint_tooltip = "Un disparo simple que va solo hacia una dirección en linea recta"
+theme = ExtResource( 14 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/ComandosBasicos/VBoxContainer/Disp"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Disparo lineal"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Par" type="TextureButton" parent="Control/ComandosBasicos/VBoxContainer"]
+margin_top = 175.0
+margin_right = 270.0
+margin_bottom = 215.0
+rect_min_size = Vector2( 0, 40 )
+hint_tooltip = "Un disparo complejo, pero con mayor daño, se necesita dirección y distancia."
+theme = ExtResource( 14 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/ComandosBasicos/VBoxContainer/Par"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Disparo parabólico"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Min" type="TextureButton" parent="Control/ComandosBasicos/VBoxContainer"]
+margin_top = 245.0
+margin_right = 270.0
+margin_bottom = 285.0
+rect_min_size = Vector2( 0, 40 )
+hint_tooltip = "Se deja una mina una vez se mueva de la posición"
+theme = ExtResource( 14 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/ComandosBasicos/VBoxContainer/Min"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Mina"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rad" type="TextureButton" parent="Control/ComandosBasicos/VBoxContainer"]
+margin_top = 315.0
+margin_right = 270.0
+margin_bottom = 355.0
+rect_min_size = Vector2( 0, 40 )
+hint_tooltip = "Se rastrea un enemigo hacia una posición (devuelve número positivo si es tanque y negativo si es pared)"
+theme = ExtResource( 14 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/ComandosBasicos/VBoxContainer/Rad"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Radar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Si" type="TextureButton" parent="Control/ComandosBasicos/VBoxContainer"]
+margin_top = 385.0
+margin_right = 270.0
+margin_bottom = 425.0
+rect_min_size = Vector2( 0, 40 )
+hint_tooltip = "Dada una condición y si es verdadera ejecuta una instrucción"
+theme = ExtResource( 14 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/ComandosBasicos/VBoxContainer/Si"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Condicional"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mientras" type="TextureButton" parent="Control/ComandosBasicos/VBoxContainer"]
+margin_top = 455.0
+margin_right = 270.0
+margin_bottom = 495.0
+rect_min_size = Vector2( 0, 40 )
+hint_tooltip = "Dada una condición se repetirán dichas líneas encerradas entre el Mientras y el Fin Mientras"
+theme = ExtResource( 14 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/ComandosBasicos/VBoxContainer/Mientras"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Mientras"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fin Mientras" type="TextureButton" parent="Control/ComandosBasicos/VBoxContainer"]
+visible = false
+margin_top = 490.0
+margin_right = 270.0
+margin_bottom = 530.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/ComandosBasicos/VBoxContainer/Fin Mientras"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Fin Mientras"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Borrar" type="TextureButton" parent="Control/ComandosBasicos/VBoxContainer"]
+margin_top = 525.0
+margin_right = 270.0
+margin_bottom = 565.0
+rect_min_size = Vector2( 0, 40 )
+hint_tooltip = "Para borrar un comando, necesitas marcar la línea"
+theme = ExtResource( 14 )
+disabled = true
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+texture_disabled = ExtResource( 9 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/ComandosBasicos/VBoxContainer/Borrar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Borrar Comando"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Direccion" type="Panel" parent="Control"]
+visible = false
+material = SubResource( 3 )
+anchor_left = 0.7
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Direccion"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.0504
+margin_top = -167.5
+margin_right = 75.0504
+margin_bottom = 167.5
+custom_constants/separation = 30
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Norte" type="TextureButton" parent="Control/Direccion/VBoxContainer"]
+margin_right = 150.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/Direccion/VBoxContainer/Norte"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Norte"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sur" type="TextureButton" parent="Control/Direccion/VBoxContainer"]
+margin_top = 70.0
+margin_right = 150.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/Direccion/VBoxContainer/Sur"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Sur"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Este" type="TextureButton" parent="Control/Direccion/VBoxContainer"]
+margin_top = 140.0
+margin_right = 150.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/Direccion/VBoxContainer/Este"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Este"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Oeste" type="TextureButton" parent="Control/Direccion/VBoxContainer"]
+margin_top = 210.0
+margin_right = 150.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/Direccion/VBoxContainer/Oeste"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Oeste"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Regresar" type="TextureButton" parent="Control/Direccion/VBoxContainer"]
+margin_top = 280.0
+margin_right = 150.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/Direccion/VBoxContainer/Regresar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Regresar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Registros" type="Panel" parent="Control"]
+visible = false
+material = SubResource( 3 )
+anchor_left = 0.7
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Registros"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -135.168
+margin_top = -324.0
+margin_right = 135.168
+margin_bottom = 324.0
+custom_constants/separation = 30
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vida" type="TextureButton" parent="Control/Registros/VBoxContainer"]
+margin_top = 129.0
+margin_right = 270.0
+margin_bottom = 169.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/Registros/VBoxContainer/Vida"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Vida"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TirosPara" type="TextureButton" parent="Control/Registros/VBoxContainer"]
+margin_top = 199.0
+margin_right = 270.0
+margin_bottom = 239.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/Registros/VBoxContainer/TirosPara"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Tiros parabolicos"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TirosLin" type="TextureButton" parent="Control/Registros/VBoxContainer"]
+margin_top = 269.0
+margin_right = 270.0
+margin_bottom = 309.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/Registros/VBoxContainer/TirosLin"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Tiros Lineales"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Minas" type="TextureButton" parent="Control/Registros/VBoxContainer"]
+margin_top = 339.0
+margin_right = 270.0
+margin_bottom = 379.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/Registros/VBoxContainer/Minas"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Minas"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Radar" type="TextureButton" parent="Control/Registros/VBoxContainer"]
+margin_top = 409.0
+margin_right = 270.0
+margin_bottom = 449.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/Registros/VBoxContainer/Radar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Radar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Regresar" type="TextureButton" parent="Control/Registros/VBoxContainer"]
+margin_top = 479.0
+margin_right = 270.0
+margin_bottom = 519.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/Registros/VBoxContainer/Regresar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Regresar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Operadores" type="Panel" parent="Control"]
+visible = false
+material = SubResource( 3 )
+anchor_left = 0.7
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AllOperators" type="VBoxContainer" parent="Control/Operadores"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -67.584
+margin_top = -230.0
+margin_right = 67.584
+margin_bottom = 230.0
+custom_constants/separation = 30
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mayor" type="TextureButton" parent="Control/Operadores/AllOperators"]
+margin_right = 135.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/Operadores/AllOperators/Mayor"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = ">"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mayor Igual" type="TextureButton" parent="Control/Operadores/AllOperators"]
+margin_top = 70.0
+margin_right = 135.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/Operadores/AllOperators/Mayor Igual"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = ">="
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Igual" type="TextureButton" parent="Control/Operadores/AllOperators"]
+margin_top = 140.0
+margin_right = 135.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/Operadores/AllOperators/Igual"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "=="
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menor Igual" type="TextureButton" parent="Control/Operadores/AllOperators"]
+margin_top = 210.0
+margin_right = 135.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/Operadores/AllOperators/Menor Igual"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "<="
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menor" type="TextureButton" parent="Control/Operadores/AllOperators"]
+margin_top = 280.0
+margin_right = 135.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/Operadores/AllOperators/Menor"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "<"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Diferente" type="TextureButton" parent="Control/Operadores/AllOperators"]
+margin_top = 350.0
+margin_right = 135.0
+margin_bottom = 390.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/Operadores/AllOperators/Diferente"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "!="
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Regresar" type="TextureButton" parent="Control/Operadores/AllOperators"]
+margin_top = 420.0
+margin_right = 135.0
+margin_bottom = 460.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/Operadores/AllOperators/Regresar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Regresar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CondicionesIf" type="Panel" parent="Control"]
+visible = false
+material = SubResource( 3 )
+anchor_left = 0.7
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vida" type="VBoxContainer" parent="Control/CondicionesIf"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.0504
+margin_top = -167.5
+margin_right = 75.0504
+margin_bottom = 167.5
+custom_constants/separation = 30
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/CondicionesIf/Vida"]
+margin_top = 79.0
+margin_right = 159.0
+margin_bottom = 116.0
+custom_fonts/font = ExtResource( 3 )
+text = "Vida"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/CondicionesIf/Vida"]
+margin_top = 146.0
+margin_right = 159.0
+margin_bottom = 186.0
+custom_constants/separation = 11
+alignment = 1
+
+[node name="ContadorVida" type="SpinBox" parent="Control/CondicionesIf/Vida/HBoxContainer"]
+margin_right = 108.0
+margin_bottom = 40.0
+theme = ExtResource( 16 )
+step = 5.0
+value = 100.0
+
+[node name="Aceptar" type="TextureButton" parent="Control/CondicionesIf/Vida/HBoxContainer"]
+margin_left = 119.0
+margin_right = 159.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/CondicionesIf/Vida/HBoxContainer/Aceptar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = ">"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Regresar" type="TextureButton" parent="Control/CondicionesIf/Vida"]
+margin_top = 216.0
+margin_right = 159.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 40, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/CondicionesIf/Vida/Regresar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Regresar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DisparosParabolicos" type="VBoxContainer" parent="Control/CondicionesIf"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -76.5
+margin_right = 76.5
+custom_constants/separation = 30
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/CondicionesIf/DisparosParabolicos"]
+margin_top = 215.0
+margin_right = 159.0
+margin_bottom = 292.0
+custom_fonts/font = ExtResource( 3 )
+text = "Disparos 
+Parabolicos"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/CondicionesIf/DisparosParabolicos"]
+margin_top = 322.0
+margin_right = 159.0
+margin_bottom = 362.0
+custom_constants/separation = 11
+alignment = 1
+
+[node name="ContadorDisparosParabolicos" type="SpinBox" parent="Control/CondicionesIf/DisparosParabolicos/HBoxContainer"]
+margin_right = 108.0
+margin_bottom = 40.0
+theme = ExtResource( 16 )
+max_value = 20.0
+
+[node name="Aceptar" type="TextureButton" parent="Control/CondicionesIf/DisparosParabolicos/HBoxContainer"]
+margin_left = 119.0
+margin_right = 159.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/CondicionesIf/DisparosParabolicos/HBoxContainer/Aceptar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.0505371
+margin_right = -0.0505371
+custom_fonts/font = ExtResource( 3 )
+text = ">"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Regresar" type="TextureButton" parent="Control/CondicionesIf/DisparosParabolicos"]
+margin_top = 392.0
+margin_right = 159.0
+margin_bottom = 432.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/CondicionesIf/DisparosParabolicos/Regresar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Regresar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DisparosLineales" type="VBoxContainer" parent="Control/CondicionesIf"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -76.5
+margin_right = 76.5
+custom_constants/separation = 30
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/CondicionesIf/DisparosLineales"]
+margin_top = 235.0
+margin_right = 185.0
+margin_bottom = 272.0
+custom_fonts/font = ExtResource( 3 )
+text = "Tiros Lineales"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/CondicionesIf/DisparosLineales"]
+margin_top = 302.0
+margin_right = 185.0
+margin_bottom = 342.0
+custom_constants/separation = 11
+alignment = 1
+
+[node name="ContadorDisparosLineales" type="SpinBox" parent="Control/CondicionesIf/DisparosLineales/HBoxContainer"]
+margin_left = 13.0
+margin_right = 121.0
+margin_bottom = 40.0
+theme = ExtResource( 16 )
+max_value = 20.0
+
+[node name="Aceptar" type="TextureButton" parent="Control/CondicionesIf/DisparosLineales/HBoxContainer"]
+margin_left = 132.0
+margin_right = 172.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/CondicionesIf/DisparosLineales/HBoxContainer/Aceptar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.0505371
+margin_right = -0.0505371
+custom_fonts/font = ExtResource( 3 )
+text = ">"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Regresar" type="TextureButton" parent="Control/CondicionesIf/DisparosLineales"]
+margin_top = 372.0
+margin_right = 185.0
+margin_bottom = 412.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/CondicionesIf/DisparosLineales/Regresar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Regresar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Minas" type="VBoxContainer" parent="Control/CondicionesIf"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.0504
+margin_top = -167.5
+margin_right = 75.0504
+margin_bottom = 167.5
+custom_constants/separation = 30
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/CondicionesIf/Minas"]
+margin_top = 79.0
+margin_right = 159.0
+margin_bottom = 116.0
+custom_fonts/font = ExtResource( 3 )
+text = "Minas"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/CondicionesIf/Minas"]
+margin_top = 146.0
+margin_right = 159.0
+margin_bottom = 186.0
+custom_constants/separation = 11
+alignment = 1
+
+[node name="ContadorMinas" type="SpinBox" parent="Control/CondicionesIf/Minas/HBoxContainer"]
+margin_right = 108.0
+margin_bottom = 40.0
+theme = ExtResource( 16 )
+max_value = 20.0
+
+[node name="Aceptar" type="TextureButton" parent="Control/CondicionesIf/Minas/HBoxContainer"]
+margin_left = 119.0
+margin_right = 159.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/CondicionesIf/Minas/HBoxContainer/Aceptar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = ">"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Regresar" type="TextureButton" parent="Control/CondicionesIf/Minas"]
+margin_top = 216.0
+margin_right = 159.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/CondicionesIf/Minas/Regresar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Regresar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Radar" type="VBoxContainer" parent="Control/CondicionesIf"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.0504
+margin_top = -167.5
+margin_right = 75.0504
+margin_bottom = 167.5
+custom_constants/separation = 30
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/CondicionesIf/Radar"]
+margin_top = 79.0
+margin_right = 159.0
+margin_bottom = 116.0
+custom_fonts/font = ExtResource( 3 )
+text = "Radar"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/CondicionesIf/Radar"]
+margin_top = 146.0
+margin_right = 159.0
+margin_bottom = 186.0
+custom_constants/separation = 11
+alignment = 1
+
+[node name="ContadorRadar" type="SpinBox" parent="Control/CondicionesIf/Radar/HBoxContainer"]
+margin_right = 108.0
+margin_bottom = 40.0
+theme = ExtResource( 16 )
+min_value = -10.0
+max_value = 10.0
+
+[node name="Aceptar" type="TextureButton" parent="Control/CondicionesIf/Radar/HBoxContainer"]
+margin_left = 119.0
+margin_right = 159.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/CondicionesIf/Radar/HBoxContainer/Aceptar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = ">"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Regresar" type="TextureButton" parent="Control/CondicionesIf/Radar"]
+margin_top = 216.0
+margin_right = 159.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/CondicionesIf/Radar/Regresar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Regresar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ComandosIf" type="Panel" parent="Control"]
+visible = false
+material = SubResource( 3 )
+anchor_left = 0.7
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ComandosIf"]
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 1.0
+custom_constants/separation = 30
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mov" type="TextureButton" parent="Control/ComandosIf/VBoxContainer"]
+margin_top = 129.0
+margin_right = 304.0
+margin_bottom = 169.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/ComandosIf/VBoxContainer/Mov"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Mover"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Disp" type="TextureButton" parent="Control/ComandosIf/VBoxContainer"]
+margin_top = 199.0
+margin_right = 304.0
+margin_bottom = 239.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/ComandosIf/VBoxContainer/Disp"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Disparo lineal"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Par" type="TextureButton" parent="Control/ComandosIf/VBoxContainer"]
+margin_top = 269.0
+margin_right = 304.0
+margin_bottom = 309.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/ComandosIf/VBoxContainer/Par"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Disparo parabolico"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Min" type="TextureButton" parent="Control/ComandosIf/VBoxContainer"]
+margin_top = 339.0
+margin_right = 304.0
+margin_bottom = 379.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/ComandosIf/VBoxContainer/Min"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Mina"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rad" type="TextureButton" parent="Control/ComandosIf/VBoxContainer"]
+margin_top = 409.0
+margin_right = 304.0
+margin_bottom = 449.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/ComandosIf/VBoxContainer/Rad"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Radar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Regresar" type="TextureButton" parent="Control/ComandosIf/VBoxContainer"]
+margin_top = 479.0
+margin_right = 304.0
+margin_bottom = 519.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label7" type="Label" parent="Control/ComandosIf/VBoxContainer/Regresar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Regresar
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Distancia" type="Panel" parent="Control"]
+visible = false
+material = SubResource( 3 )
+anchor_left = 0.7
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Distancia"]
+anchor_left = 0.3
+anchor_right = 0.7
+anchor_bottom = 1.0
+custom_constants/separation = 30
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/Distancia/VBoxContainer"]
+margin_top = 235.0
+margin_right = 163.0
+margin_bottom = 272.0
+custom_fonts/font = ExtResource( 3 )
+text = "Distancia"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Distancia/VBoxContainer"]
+margin_top = 302.0
+margin_right = 163.0
+margin_bottom = 342.0
+custom_constants/separation = 15
+alignment = 1
+
+[node name="ContadorDistancia" type="SpinBox" parent="Control/Distancia/VBoxContainer/HBoxContainer"]
+margin_right = 108.0
+margin_bottom = 40.0
+theme = ExtResource( 16 )
+min_value = 1.0
+max_value = 10.0
+value = 1.0
+
+[node name="Aceptar" type="TextureButton" parent="Control/Distancia/VBoxContainer/HBoxContainer"]
+margin_left = 123.0
+margin_right = 163.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/Distancia/VBoxContainer/HBoxContainer/Aceptar"]
+margin_right = 40.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 40, 40 )
+custom_fonts/font = ExtResource( 3 )
+text = ">"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Regresar" type="TextureButton" parent="Control/Distancia/VBoxContainer"]
+margin_top = 372.0
+margin_right = 163.0
+margin_bottom = 412.0
+rect_min_size = Vector2( 0, 40 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label2" type="Label" parent="Control/Distancia/VBoxContainer/Regresar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Regresar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control2" type="Control" parent="."]
+anchor_right = 0.035
+anchor_bottom = 0.04
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="regresa" type="TextureButton" parent="Control2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Codigo" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Codigo"]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.7
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Codigo/Panel"]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.3
+
+[node name="nombreArchivo" type="TextEdit" parent="Codigo/Panel/Panel"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="Codigo/Panel"]
+anchor_left = 0.2
+anchor_top = 0.5
+anchor_right = 0.8
+anchor_bottom = 0.7
+custom_styles/panel = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="Panel" parent="Codigo/Panel/Panel2"]
+anchor_right = 0.45
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 7 )
+
+[node name="Aceptar" type="TextureButton" parent="Codigo/Panel/Panel2/HBoxContainer"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Codigo/Panel/Panel2/HBoxContainer/Aceptar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Aceptar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="Panel" parent="Codigo/Panel/Panel2"]
+anchor_left = 0.55
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 8 )
+
+[node name="Cancelar" type="TextureButton" parent="Codigo/Panel/Panel2/HBoxContainer2"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="Codigo/Panel/Panel2/HBoxContainer2/Cancelar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Cancelar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EfectoCodigo" type="Tween" parent="Codigo"]
+
+[node name="ErrorMessage" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Error" type="Panel" parent="ErrorMessage"]
+anchor_left = 0.35
+anchor_top = 0.35
+anchor_right = 0.65
+anchor_bottom = 0.65
+margin_left = 15.84
+margin_top = -9.2
+margin_right = 55.84
+margin_bottom = 30.8
+custom_styles/panel = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ErrorMessage/Error"]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.7
+custom_fonts/font = ExtResource( 13 )
+text = "No se puede guardar ya que cada \"Mientras\" necesita llevar su \"Fin Mientras\""
+align = 1
+autowrap = true
+
+[node name="Panel" type="Panel" parent="ErrorMessage/Error"]
+anchor_left = 0.3
+anchor_top = 0.7
+anchor_right = 0.7
+anchor_bottom = 0.95
+custom_styles/panel = SubResource( 10 )
+
+[node name="ErrorButton" type="TextureButton" parent="ErrorMessage/Error/Panel"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="ErrorMessage/Error/Panel/ErrorButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.584
+margin_top = -29.3
+margin_right = 75.584
+margin_bottom = 29.3
+custom_fonts/font = ExtResource( 13 )
+text = "Aceptar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EfectoError" type="Tween" parent="ErrorMessage"]
+
+[node name="ErrorMessage2" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Error" type="Panel" parent="ErrorMessage2"]
+anchor_left = 0.35
+anchor_top = 0.35
+anchor_right = 0.65
+anchor_bottom = 0.65
+margin_left = 15.84
+margin_top = -9.2
+margin_right = 55.84
+margin_bottom = 30.8
+custom_styles/panel = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ErrorMessage2/Error"]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.7
+margin_left = 3.8147e-06
+margin_top = 1.90735e-06
+margin_right = 3.05176e-05
+margin_bottom = 1.52588e-05
+custom_fonts/font = ExtResource( 13 )
+text = "Se perderá todo su progreso
+
+ ¿Desea continuar?"
+align = 1
+autowrap = true
+
+[node name="Panel" type="Panel" parent="ErrorMessage2/Error"]
+anchor_left = 0.05
+anchor_top = 0.7
+anchor_right = 0.45
+anchor_bottom = 0.95
+custom_styles/panel = SubResource( 10 )
+
+[node name="AceptarProgreso" type="TextureButton" parent="ErrorMessage2/Error/Panel"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="ErrorMessage2/Error/Panel/AceptarProgreso"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.584
+margin_top = -29.3
+margin_right = 75.584
+margin_bottom = 29.3
+custom_fonts/font = ExtResource( 13 )
+text = "Aceptar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="ErrorMessage2/Error"]
+anchor_left = 0.55
+anchor_top = 0.7
+anchor_right = 0.95
+anchor_bottom = 0.95
+custom_styles/panel = SubResource( 10 )
+
+[node name="CancelarProgreso" type="TextureButton" parent="ErrorMessage2/Error/Panel2"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="ErrorMessage2/Error/Panel2/CancelarProgreso"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.584
+margin_top = -29.3
+margin_right = 75.584
+margin_bottom = 29.3
+custom_fonts/font = ExtResource( 13 )
+text = "Cancelar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EfectoError" type="Tween" parent="ErrorMessage2"]
+
+[node name="Abrir" type="FileDialog" parent="."]
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.7
+margin_right = -6.10352e-05
+margin_bottom = -3.05176e-05
+theme = SubResource( 21 )
+window_title = "Abrir un Archivo"
+mode = 0
+access = 1
+filters = PoolStringArray( "*.txt ; Script Files" )
+current_dir = "user://Codigos"
+current_file = "Dispara.txt"
+current_path = "user://Codigos/Dispara.txt"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cloc" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 11 )
+bus = "Click"
+[connection signal="breakpoint_toggled" from="Control/Panel/Instrucciones" to="Control" method="_on_Instrucciones_breakpoint_toggled"]
+[connection signal="draw" from="Control/Panel/Instrucciones" to="Control" method="_on_Instrucciones_draw"]
+[connection signal="pressed" from="Control/Panel/VBoxContainer/Abrir" to="Control" method="_on_Abrir_pressed"]
+[connection signal="pressed" from="Control/Panel/VBoxContainer2/Guardar" to="Control" method="_on_Guardar_pressed"]
+[connection signal="pressed" from="Control/ComandosBasicos/VBoxContainer/Mov" to="Control" method="_on_Mov_pressed"]
+[connection signal="pressed" from="Control/ComandosBasicos/VBoxContainer/Disp" to="Control" method="_on_Disp_pressed"]
+[connection signal="pressed" from="Control/ComandosBasicos/VBoxContainer/Par" to="Control" method="_on_Par_pressed"]
+[connection signal="pressed" from="Control/ComandosBasicos/VBoxContainer/Min" to="Control" method="_on_Min_pressed"]
+[connection signal="pressed" from="Control/ComandosBasicos/VBoxContainer/Rad" to="Control" method="_on_Rad_pressed"]
+[connection signal="pressed" from="Control/ComandosBasicos/VBoxContainer/Si" to="Control" method="_on_Si_pressed"]
+[connection signal="pressed" from="Control/ComandosBasicos/VBoxContainer/Mientras" to="Control" method="_on_Mientras_pressed"]
+[connection signal="pressed" from="Control/ComandosBasicos/VBoxContainer/Fin Mientras" to="Control" method="_on_Fin_Mientras_pressed"]
+[connection signal="pressed" from="Control/ComandosBasicos/VBoxContainer/Borrar" to="Control" method="_on_Borrar_pressed"]
+[connection signal="pressed" from="Control/Direccion/VBoxContainer/Norte" to="Control" method="_on_Norte_pressed"]
+[connection signal="pressed" from="Control/Direccion/VBoxContainer/Sur" to="Control" method="_on_Sur_pressed"]
+[connection signal="pressed" from="Control/Direccion/VBoxContainer/Este" to="Control" method="_on_Este_pressed"]
+[connection signal="pressed" from="Control/Direccion/VBoxContainer/Oeste" to="Control" method="_on_Oeste_pressed"]
+[connection signal="pressed" from="Control/Direccion/VBoxContainer/Regresar" to="Control" method="_on_Regresar_pressed"]
+[connection signal="pressed" from="Control/Registros/VBoxContainer/Vida" to="Control" method="_on_Vida_pressed"]
+[connection signal="pressed" from="Control/Registros/VBoxContainer/TirosPara" to="Control" method="_on_TirosPara_pressed"]
+[connection signal="pressed" from="Control/Registros/VBoxContainer/TirosLin" to="Control" method="_on_TirosLin_pressed"]
+[connection signal="pressed" from="Control/Registros/VBoxContainer/Minas" to="Control" method="_on_Minas_pressed"]
+[connection signal="pressed" from="Control/Registros/VBoxContainer/Radar" to="Control" method="_on_Radar_pressed"]
+[connection signal="pressed" from="Control/Registros/VBoxContainer/Regresar" to="Control" method="_on_Regresar_pressed"]
+[connection signal="pressed" from="Control/Operadores/AllOperators/Mayor" to="Control" method="_on_Mayor_pressed"]
+[connection signal="pressed" from="Control/Operadores/AllOperators/Mayor Igual" to="Control" method="_on_Mayor_Igual_pressed"]
+[connection signal="pressed" from="Control/Operadores/AllOperators/Igual" to="Control" method="_on_Igual_pressed"]
+[connection signal="pressed" from="Control/Operadores/AllOperators/Menor Igual" to="Control" method="_on_Menor_Igual_pressed"]
+[connection signal="pressed" from="Control/Operadores/AllOperators/Menor" to="Control" method="_on_Menor_pressed"]
+[connection signal="pressed" from="Control/Operadores/AllOperators/Diferente" to="Control" method="_on_Diferente_pressed"]
+[connection signal="pressed" from="Control/Operadores/AllOperators/Regresar" to="Control" method="_on_Regresar_pressed"]
+[connection signal="pressed" from="Control/CondicionesIf/Vida/HBoxContainer/Aceptar" to="Control" method="_on_AceptarVida_pressed"]
+[connection signal="pressed" from="Control/CondicionesIf/Vida/Regresar" to="Control" method="_on_Regresar_pressed"]
+[connection signal="pressed" from="Control/CondicionesIf/DisparosParabolicos/HBoxContainer/Aceptar" to="Control" method="_on_TirosParaAceptar_pressed"]
+[connection signal="pressed" from="Control/CondicionesIf/DisparosParabolicos/Regresar" to="Control" method="_on_Regresar_pressed"]
+[connection signal="pressed" from="Control/CondicionesIf/DisparosLineales/HBoxContainer/Aceptar" to="Control" method="_on_TirosLinealesAceptar_pressed"]
+[connection signal="pressed" from="Control/CondicionesIf/DisparosLineales/Regresar" to="Control" method="_on_Regresar_pressed"]
+[connection signal="pressed" from="Control/CondicionesIf/Minas/HBoxContainer/Aceptar" to="Control" method="_on_MinasAceptar_pressed"]
+[connection signal="pressed" from="Control/CondicionesIf/Minas/Regresar" to="Control" method="_on_Regresar_pressed"]
+[connection signal="pressed" from="Control/CondicionesIf/Radar/HBoxContainer/Aceptar" to="Control" method="_on_RadarAceptar_pressed"]
+[connection signal="pressed" from="Control/CondicionesIf/Radar/Regresar" to="Control" method="_on_Regresar_pressed"]
+[connection signal="pressed" from="Control/ComandosIf/VBoxContainer/Mov" to="Control" method="_on_Mov_pressed"]
+[connection signal="pressed" from="Control/ComandosIf/VBoxContainer/Disp" to="Control" method="_on_Disp_pressed"]
+[connection signal="pressed" from="Control/ComandosIf/VBoxContainer/Par" to="Control" method="_on_Par_pressed"]
+[connection signal="pressed" from="Control/ComandosIf/VBoxContainer/Min" to="Control" method="_on_Min_pressed"]
+[connection signal="pressed" from="Control/ComandosIf/VBoxContainer/Rad" to="Control" method="_on_Rad_pressed"]
+[connection signal="pressed" from="Control/ComandosIf/VBoxContainer/Regresar" to="Control" method="_on_Regresar_pressed"]
+[connection signal="pressed" from="Control/Distancia/VBoxContainer/HBoxContainer/Aceptar" to="Control" method="_on_AceptarDistancia_pressed"]
+[connection signal="pressed" from="Control/Distancia/VBoxContainer/Regresar" to="Control" method="_on_Regresar_pressed"]
+[connection signal="pressed" from="Control2/regresa" to="Control" method="_on_regresa_pressed"]
+[connection signal="pressed" from="Codigo/Panel/Panel2/HBoxContainer/Aceptar" to="Control" method="_on_Aceptar_pressed"]
+[connection signal="pressed" from="Codigo/Panel/Panel2/HBoxContainer2/Cancelar" to="Control" method="_on_Cancelar_pressed"]
+[connection signal="pressed" from="ErrorMessage/Error/Panel/ErrorButton" to="Control" method="_on_ErrorButton_pressed"]
+[connection signal="pressed" from="ErrorMessage2/Error/Panel/AceptarProgreso" to="Control" method="_on_AceptarProgreso_pressed"]
+[connection signal="pressed" from="ErrorMessage2/Error/Panel2/CancelarProgreso" to="Control" method="_on_CancelarProgreso_pressed"]
+[connection signal="file_selected" from="Abrir" to="Control" method="_on_Abrir_file_selected"]

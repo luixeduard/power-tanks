@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/The Only Thing They Fear Is You.ogg-72de120c459ea32a1d8ef0f804e420ae.oggstr"
+
+[deps]
+
+source_file="res://Sonidos/The Only Thing They Fear Is You.ogg"
+dest_files=[ "res://.import/The Only Thing They Fear Is You.ogg-72de120c459ea32a1d8ef0f804e420ae.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

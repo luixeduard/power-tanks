@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Gary vs David.ogg-0f335b1586054850cb5ed8ecc3c42efa.oggstr"
+
+[deps]
+
+source_file="res://Sonidos/Gary vs David.ogg"
+dest_files=[ "res://.import/Gary vs David.ogg-0f335b1586054850cb5ed8ecc3c42efa.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

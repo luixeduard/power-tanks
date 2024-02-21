@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Arragamet.ogg-88f462949a2b0aee16d51a65729e1514.oggstr"
+
+[deps]
+
+source_file="res://Sonidos/Arragamet.ogg"
+dest_files=[ "res://.import/Arragamet.ogg-88f462949a2b0aee16d51a65729e1514.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

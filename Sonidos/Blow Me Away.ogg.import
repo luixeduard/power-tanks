@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Blow Me Away.ogg-2e2c1c33dd2f3a3f6673d0c24d89f6f2.oggstr"
+
+[deps]
+
+source_file="res://Sonidos/Blow Me Away.ogg"
+dest_files=[ "res://.import/Blow Me Away.ogg-2e2c1c33dd2f3a3f6673d0c24d89f6f2.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

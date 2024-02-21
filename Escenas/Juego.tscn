@@ -1,0 +1,1077 @@
+[gd_scene load_steps=44 format=2]
+
+[ext_resource path="res://Scripts/Grid.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/GridVisualizer.gd" type="Script" id=2]
+[ext_resource path="res://graphics/mapa/mapa.png" type="Texture" id=3]
+[ext_resource path="res://graphics/botones/pausaA_i.png" type="Texture" id=4]
+[ext_resource path="res://graphics/botones/pausaA_s.png" type="Texture" id=5]
+[ext_resource path="res://graphics/botones/pausaA.png" type="Texture" id=6]
+[ext_resource path="res://shaders/blur.gdshader" type="Shader" id=7]
+[ext_resource path="res://Scripts/pause.gd" type="Script" id=8]
+[ext_resource path="res://graphics/botones/BRvi.png" type="Texture" id=10]
+[ext_resource path="res://graphics/botones/BRv.png" type="Texture" id=11]
+[ext_resource path="res://graphics/botones/BRvs.png" type="Texture" id=12]
+[ext_resource path="res://graphics/municion/tiroP.png" type="Texture" id=13]
+[ext_resource path="res://graphics/municion/mina1.png" type="Texture" id=15]
+[ext_resource path="res://graphics/botones/bandera.png" type="Texture" id=17]
+[ext_resource path="res://Scripts/ConfiguracionEnJuego.gd" type="Script" id=18]
+[ext_resource path="res://Sonidos/clic ojalata.wav" type="AudioStream" id=19]
+[ext_resource path="res://Sonidos/Disparo tanque.wav" type="AudioStream" id=20]
+[ext_resource path="res://Sonidos/Explosion lineal.wav" type="AudioStream" id=21]
+[ext_resource path="res://Sonidos/Explosion mina.wav" type="AudioStream" id=22]
+[ext_resource path="res://graphics/botones/returni.png" type="Texture" id=23]
+[ext_resource path="res://Sonidos/ExplosionTanque.wav" type="AudioStream" id=24]
+[ext_resource path="res://graphics/botones/return.png" type="Texture" id=25]
+[ext_resource path="res://graphics/botones/returns.png" type="Texture" id=26]
+[ext_resource path="res://graphics/botones/bandera_i.png" type="Texture" id=27]
+[ext_resource path="res://graphics/botones/bandera_s.png" type="Texture" id=28]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 0.717647 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 7 )
+shader_param/amount = 1.2
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 7 )
+shader_param/amount = 1.2
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 7 )
+shader_param/amount = 1.2
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = ExtResource( 7 )
+shader_param/amount = 1.2
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = ExtResource( 7 )
+shader_param/amount = 1.2
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = ExtResource( 7 )
+shader_param/amount = 1.2
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = ExtResource( 7 )
+shader_param/amount = 1.2
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = ExtResource( 7 )
+shader_param/amount = 1.2
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.0235294, 0.0235294, 0.0235294, 0.54902 )
+shadow_color = Color( 0.0196078, 0.0196078, 0.0196078, 0.6 )
+
+[sub_resource type="ShaderMaterial" id=12]
+shader = ExtResource( 7 )
+shader_param/amount = 1.0
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="ShaderMaterial" id=15]
+shader = ExtResource( 7 )
+shader_param/amount = 1.2
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0, 0, 0, 0.92549 )
+
+[sub_resource type="ShaderMaterial" id=17]
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0, 0, 0, 0.439216 )
+
+[node name="Node" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="TextureRect"]
+anchor_left = 0.49
+anchor_top = 0.97
+anchor_right = 0.51
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -40.0
+margin_right = 20.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pausa" type="TextureButton" parent="TextureRect/Panel"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 28 )
+texture_hover = ExtResource( 27 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Posiciones" type="Control" parent="."]
+anchor_left = 0.05
+anchor_top = 0.1
+anchor_right = 0.25
+anchor_bottom = 0.9
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fondo" type="Panel" parent="Posiciones"]
+anchor_left = 0.03
+anchor_top = 0.005
+anchor_right = 0.97
+anchor_bottom = 0.49
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player1" type="Panel" parent="Posiciones"]
+material = SubResource( 3 )
+anchor_right = 1.0
+anchor_bottom = 0.25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Posiciones/Player1"]
+anchor_left = 0.1
+anchor_right = 0.1
+anchor_bottom = 0.05
+margin_right = 40.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Jugador 1:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tanque1" type="TextureRect" parent="Posiciones/Player1"]
+anchor_left = 0.05
+anchor_top = 0.15
+anchor_right = 0.6
+anchor_bottom = 1.0
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Posiciones/Player1"]
+material = SubResource( 4 )
+anchor_left = 0.6
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 0.95
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vida" type="TextureRect" parent="Posiciones/Player1/Panel"]
+anchor_right = 0.9
+anchor_bottom = 0.25
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelDL" type="Panel" parent="Posiciones/Player1/Panel"]
+material = SubResource( 5 )
+anchor_top = 0.25
+anchor_right = 1.0
+anchor_bottom = 0.5
+
+[node name="Ammo" type="TextureRect" parent="Posiciones/Player1/Panel/PanelDL"]
+anchor_right = 0.6
+anchor_bottom = 1.0
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Posiciones/Player1/Panel/PanelDL"]
+anchor_left = 0.6
+anchor_right = 1.0
+anchor_bottom = 1.0
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelDP" type="Panel" parent="Posiciones/Player1/Panel"]
+material = SubResource( 5 )
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.75
+
+[node name="Ammo" type="TextureRect" parent="Posiciones/Player1/Panel/PanelDP"]
+anchor_right = 0.6
+anchor_bottom = 1.0
+texture = ExtResource( 13 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Posiciones/Player1/Panel/PanelDP"]
+anchor_left = 0.6
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PanelMin" type="Panel" parent="Posiciones/Player1/Panel"]
+material = SubResource( 5 )
+anchor_top = 0.75
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Ammo" type="TextureRect" parent="Posiciones/Player1/Panel/PanelMin"]
+anchor_right = 0.6
+anchor_bottom = 1.0
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Posiciones/Player1/Panel/PanelMin"]
+anchor_left = 0.6
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Player2" type="Panel" parent="Posiciones"]
+material = SubResource( 6 )
+anchor_top = 0.25
+anchor_right = 1.0
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Posiciones/Player2"]
+anchor_left = 0.1
+anchor_right = 0.1
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Jugador 2:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tanque2" type="TextureRect" parent="Posiciones/Player2"]
+anchor_left = 0.05
+anchor_top = 0.15
+anchor_right = 0.6
+anchor_bottom = 1.0
+expand = true
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Posiciones/Player2"]
+material = SubResource( 7 )
+anchor_left = 0.6
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 0.95
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vida" type="TextureRect" parent="Posiciones/Player2/Panel"]
+anchor_right = 0.9
+anchor_bottom = 0.25
+expand = true
+stretch_mode = 6
+
+[node name="PanelDL" type="Panel" parent="Posiciones/Player2/Panel"]
+material = SubResource( 8 )
+anchor_top = 0.25
+anchor_right = 1.0
+anchor_bottom = 0.5
+
+[node name="Ammo" type="TextureRect" parent="Posiciones/Player2/Panel/PanelDL"]
+anchor_right = 0.6
+anchor_bottom = 1.0
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Posiciones/Player2/Panel/PanelDL"]
+anchor_left = 0.6
+anchor_right = 1.0
+anchor_bottom = 1.0
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelDP" type="Panel" parent="Posiciones/Player2/Panel"]
+material = SubResource( 8 )
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.75
+
+[node name="Ammo" type="TextureRect" parent="Posiciones/Player2/Panel/PanelDP"]
+anchor_right = 0.6
+anchor_bottom = 1.0
+texture = ExtResource( 13 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Posiciones/Player2/Panel/PanelDP"]
+anchor_left = 0.6
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PanelMin" type="Panel" parent="Posiciones/Player2/Panel"]
+material = SubResource( 8 )
+anchor_top = 0.75
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Ammo" type="TextureRect" parent="Posiciones/Player2/Panel/PanelMin"]
+anchor_right = 0.6
+anchor_bottom = 1.0
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Posiciones/Player2/Panel/PanelMin"]
+anchor_left = 0.6
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Player3" type="Panel" parent="Posiciones"]
+visible = false
+material = SubResource( 9 )
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.75
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Posiciones/Player3"]
+anchor_left = 0.1
+anchor_right = 0.1
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Jugador 3:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tanque3" type="TextureRect" parent="Posiciones/Player3"]
+anchor_left = 0.05
+anchor_top = 0.15
+anchor_right = 0.6
+anchor_bottom = 1.0
+expand = true
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Posiciones/Player3"]
+material = SubResource( 9 )
+anchor_left = 0.6
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 0.95
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vida" type="TextureRect" parent="Posiciones/Player3/Panel"]
+anchor_right = 0.9
+anchor_bottom = 0.25
+expand = true
+stretch_mode = 6
+
+[node name="PanelDL" type="Panel" parent="Posiciones/Player3/Panel"]
+material = SubResource( 9 )
+anchor_top = 0.25
+anchor_right = 1.0
+anchor_bottom = 0.5
+
+[node name="Ammo" type="TextureRect" parent="Posiciones/Player3/Panel/PanelDL"]
+anchor_right = 0.6
+anchor_bottom = 1.0
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Posiciones/Player3/Panel/PanelDL"]
+anchor_left = 0.6
+anchor_right = 1.0
+anchor_bottom = 1.0
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelDP" type="Panel" parent="Posiciones/Player3/Panel"]
+material = SubResource( 9 )
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.75
+
+[node name="Ammo" type="TextureRect" parent="Posiciones/Player3/Panel/PanelDP"]
+anchor_right = 0.6
+anchor_bottom = 1.0
+texture = ExtResource( 13 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Posiciones/Player3/Panel/PanelDP"]
+anchor_left = 0.6
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PanelMin" type="Panel" parent="Posiciones/Player3/Panel"]
+material = SubResource( 9 )
+anchor_top = 0.75
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Ammo" type="TextureRect" parent="Posiciones/Player3/Panel/PanelMin"]
+anchor_right = 0.6
+anchor_bottom = 1.0
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Posiciones/Player3/Panel/PanelMin"]
+anchor_left = 0.6
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Player4" type="Panel" parent="Posiciones"]
+visible = false
+material = SubResource( 10 )
+anchor_top = 0.75
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Posiciones/Player4"]
+anchor_left = 0.1
+anchor_right = 0.1
+margin_right = 83.0
+margin_bottom = 23.0
+text = "Jugador 4:"
+
+[node name="Tanque4" type="TextureRect" parent="Posiciones/Player4"]
+anchor_left = 0.05
+anchor_top = 0.15
+anchor_right = 0.6
+anchor_bottom = 1.0
+expand = true
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Posiciones/Player4"]
+material = SubResource( 10 )
+anchor_left = 0.6
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 0.95
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vida" type="TextureRect" parent="Posiciones/Player4/Panel"]
+anchor_right = 0.9
+anchor_bottom = 0.25
+expand = true
+stretch_mode = 6
+
+[node name="PanelDL" type="Panel" parent="Posiciones/Player4/Panel"]
+material = SubResource( 10 )
+anchor_top = 0.25
+anchor_right = 1.0
+anchor_bottom = 0.5
+
+[node name="Ammo" type="TextureRect" parent="Posiciones/Player4/Panel/PanelDL"]
+anchor_right = 0.6
+anchor_bottom = 1.0
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Posiciones/Player4/Panel/PanelDL"]
+anchor_left = 0.6
+anchor_right = 1.0
+anchor_bottom = 1.0
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelDP" type="Panel" parent="Posiciones/Player4/Panel"]
+material = SubResource( 10 )
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.75
+
+[node name="Ammo" type="TextureRect" parent="Posiciones/Player4/Panel/PanelDP"]
+anchor_right = 0.6
+anchor_bottom = 1.0
+texture = ExtResource( 13 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Posiciones/Player4/Panel/PanelDP"]
+anchor_left = 0.6
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PanelMin" type="Panel" parent="Posiciones/Player4/Panel"]
+material = SubResource( 10 )
+anchor_top = 0.75
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Ammo" type="TextureRect" parent="Posiciones/Player4/Panel/PanelMin"]
+anchor_right = 0.6
+anchor_bottom = 1.0
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Posiciones/Player4/Panel/PanelMin"]
+anchor_left = 0.6
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Batalla" type="Control" parent="."]
+anchor_left = 0.25
+anchor_top = 0.1
+anchor_right = 0.75
+anchor_bottom = 0.9
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="Batalla"]
+
+[node name="Mapa" type="TileMap" parent="Batalla/Node2D"]
+format = 1
+script = ExtResource( 1 )
+
+[node name="GridVisualizer" type="Node2D" parent="Batalla/Node2D/Mapa"]
+script = ExtResource( 2 )
+
+[node name="Instrucciones" type="Control" parent="."]
+anchor_left = 0.76
+anchor_top = 0.2
+anchor_right = 0.95
+anchor_bottom = 0.9
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Instrucciones"]
+anchor_bottom = 0.07
+margin_right = 40.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.0235294, 0.0235294, 0.0235294, 1 )
+text = "Jugador 1:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Jugador1" type="TextEdit" parent="Instrucciones"]
+anchor_top = 0.09
+anchor_right = 1.0
+anchor_bottom = 0.25
+custom_colors/background_color = Color( 0, 0, 0, 1 )
+custom_colors/executing_line_color = Color( 0.760784, 0.631373, 0.631373, 1 )
+readonly = true
+highlight_current_line = true
+selecting_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Instrucciones"]
+anchor_top = 0.25
+anchor_bottom = 0.28
+margin_right = 119.0
+margin_bottom = 32.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Jugador 2:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Jugador2" type="TextEdit" parent="Instrucciones"]
+anchor_top = 0.34
+anchor_right = 1.0
+anchor_bottom = 0.5
+readonly = true
+highlight_current_line = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Instrucciones"]
+anchor_top = 0.5
+anchor_bottom = 0.52
+margin_right = 119.0
+margin_bottom = 32.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Jugador 3:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Jugador3" type="TextEdit" parent="Instrucciones"]
+anchor_top = 0.59
+anchor_right = 1.0
+anchor_bottom = 0.75
+readonly = true
+highlight_current_line = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="Instrucciones"]
+anchor_top = 0.75
+anchor_bottom = 0.78
+margin_right = 119.0
+margin_bottom = 32.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Jugador 4: "
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Jugador4" type="TextEdit" parent="Instrucciones"]
+anchor_top = 0.84
+anchor_right = 1.0
+anchor_bottom = 1.0
+readonly = true
+highlight_current_line = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="Control" parent="."]
+anchor_left = 0.85
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.2
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="Pause"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="clik" type="AudioStreamPlayer" parent="Pause"]
+pause_mode = 2
+stream = ExtResource( 19 )
+
+[node name="Control" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Panel" parent="Control"]
+visible = false
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+custom_styles/panel = SubResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="Control"]
+material = SubResource( 12 )
+anchor_left = 0.3
+anchor_top = 0.1
+anchor_right = 0.7
+anchor_bottom = 0.9
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+custom_styles/panel = SubResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="Panel" parent="Control/Panel2"]
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.8
+custom_styles/panel = SubResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reanudar" type="Panel" parent="Control/Panel2/VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 0.3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reanudar" type="TextureButton" parent="Control/Panel2/VBoxContainer/Reanudar"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/Panel2/VBoxContainer/Reanudar/Reanudar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Reanudar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Configuraciones" type="Panel" parent="Control/Panel2/VBoxContainer"]
+anchor_top = 0.33
+anchor_right = 1.0
+anchor_bottom = 0.64
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Conf" type="TextureButton" parent="Control/Panel2/VBoxContainer/Configuraciones"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/Panel2/VBoxContainer/Configuraciones/Conf"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Configuración"
+align = 1
+valign = 1
+
+[node name="Salir" type="Panel" parent="Control/Panel2/VBoxContainer"]
+anchor_top = 0.67
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Salir" type="TextureButton" parent="Control/Panel2/VBoxContainer/Salir"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/Panel2/VBoxContainer/Salir/Salir"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Salir"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EfectoPausa" type="Tween" parent="Control"]
+
+[node name="Configuracion" type="Control" parent="."]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Blur" type="Panel" parent="Configuracion"]
+material = SubResource( 15 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fondo" type="Panel" parent="Configuracion"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="Configuracion/Fondo"]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.4
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sonido" type="TextureButton" parent="Configuracion/Fondo/Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 0.3
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Configuracion/Fondo/Control/Sonido"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Sonido"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelOpc" type="Control" parent="Configuracion/Fondo"]
+anchor_left = 0.45
+anchor_top = 0.1
+anchor_right = 0.95
+anchor_bottom = 0.9
+
+[node name="PanelSonido" type="Panel" parent="Configuracion/Fondo/PanelOpc"]
+pause_mode = 2
+material = SubResource( 17 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Configuracion/Fondo/PanelOpc/PanelSonido"]
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.7
+anchor_bottom = 0.95
+custom_constants/separation = 17
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Configuracion/Fondo/PanelOpc/PanelSonido/VBoxContainer"]
+margin_right = 416.0
+margin_bottom = 37.0
+text = "Volumen general"
+
+[node name="VolGeneral" type="HSlider" parent="Configuracion/Fondo/PanelOpc/PanelSonido/VBoxContainer"]
+pause_mode = 2
+margin_top = 54.0
+margin_right = 416.0
+margin_bottom = 70.0
+min_value = -60.0
+max_value = 0.0
+
+[node name="Label2" type="Label" parent="Configuracion/Fondo/PanelOpc/PanelSonido/VBoxContainer"]
+margin_top = 87.0
+margin_right = 416.0
+margin_bottom = 124.0
+text = "Volumen de música"
+
+[node name="VolMusica" type="HSlider" parent="Configuracion/Fondo/PanelOpc/PanelSonido/VBoxContainer"]
+pause_mode = 2
+margin_top = 141.0
+margin_right = 416.0
+margin_bottom = 157.0
+min_value = -60.0
+max_value = 0.0
+
+[node name="Label3" type="Label" parent="Configuracion/Fondo/PanelOpc/PanelSonido/VBoxContainer"]
+margin_top = 174.0
+margin_right = 416.0
+margin_bottom = 211.0
+text = "Volumen de disparos"
+
+[node name="VolDisparos" type="HSlider" parent="Configuracion/Fondo/PanelOpc/PanelSonido/VBoxContainer"]
+pause_mode = 2
+margin_top = 228.0
+margin_right = 416.0
+margin_bottom = 244.0
+min_value = -60.0
+max_value = 0.0
+
+[node name="Label4" type="Label" parent="Configuracion/Fondo/PanelOpc/PanelSonido/VBoxContainer"]
+margin_top = 261.0
+margin_right = 416.0
+margin_bottom = 298.0
+text = "Volumen de explosiones"
+
+[node name="VolExplosiones" type="HSlider" parent="Configuracion/Fondo/PanelOpc/PanelSonido/VBoxContainer"]
+pause_mode = 2
+margin_top = 315.0
+margin_right = 416.0
+margin_bottom = 331.0
+min_value = -60.0
+max_value = 0.0
+
+[node name="Label5" type="Label" parent="Configuracion/Fondo/PanelOpc/PanelSonido/VBoxContainer"]
+margin_top = 348.0
+margin_right = 416.0
+margin_bottom = 385.0
+text = "Volumen de voz"
+
+[node name="VolVoz" type="HSlider" parent="Configuracion/Fondo/PanelOpc/PanelSonido/VBoxContainer"]
+pause_mode = 2
+margin_top = 402.0
+margin_right = 416.0
+margin_bottom = 418.0
+min_value = -60.0
+max_value = 6.0
+value = 6.0
+
+[node name="Aceptar" type="TextureButton" parent="Configuracion/Fondo"]
+pause_mode = 2
+anchor_right = 0.05
+anchor_bottom = 0.07
+margin_right = 12.0
+margin_bottom = 20.0
+texture_normal = ExtResource( 25 )
+texture_pressed = ExtResource( 26 )
+texture_hover = ExtResource( 23 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DisparoLineal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+bus = "Disparos"
+
+[node name="ExplosionLineal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 21 )
+bus = "Explosiones"
+
+[node name="ExplosionParabolica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 21 )
+bus = "Explosiones"
+
+[node name="ExplosionMina" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 22 )
+bus = "Explosiones"
+
+[node name="theme" type="AudioStreamPlayer" parent="."]
+bus = "Musica"
+
+[node name="ExplosionTanque" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
+bus = "Explosiones"
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="clic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+
+[node name="voz" type="AudioStreamPlayer" parent="."]
+
+[node name="TimerPerdedor" type="Timer" parent="."]
+
+[connection signal="pressed" from="TextureRect/Panel/pausa" to="Batalla/Node2D/Mapa" method="_on_pausa_pressed"]
+[connection signal="pressed" from="Pause/TextureButton" to="Pause" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Control/Panel2/VBoxContainer/Reanudar/Reanudar" to="Pause" method="_on_Reanudar_pressed"]
+[connection signal="pressed" from="Control/Panel2/VBoxContainer/Configuraciones/Conf" to="Pause" method="_on_Conf_pressed"]
+[connection signal="pressed" from="Control/Panel2/VBoxContainer/Salir/Salir" to="Batalla/Node2D/Mapa" method="_on_Salir_pressed"]
+[connection signal="value_changed" from="Configuracion/Fondo/PanelOpc/PanelSonido/VBoxContainer/VolGeneral" to="Configuracion" method="_on_VolGeneral_value_changed"]
+[connection signal="value_changed" from="Configuracion/Fondo/PanelOpc/PanelSonido/VBoxContainer/VolMusica" to="Configuracion" method="_on_VolMusica_value_changed"]
+[connection signal="value_changed" from="Configuracion/Fondo/PanelOpc/PanelSonido/VBoxContainer/VolDisparos" to="Configuracion" method="_on_VolDisparos_value_changed"]
+[connection signal="value_changed" from="Configuracion/Fondo/PanelOpc/PanelSonido/VBoxContainer/VolExplosiones" to="Configuracion" method="_on_VolExplosiones_value_changed"]
+[connection signal="value_changed" from="Configuracion/Fondo/PanelOpc/PanelSonido/VBoxContainer/VolVoz" to="Configuracion" method="_on_VolVoz_value_changed"]
+[connection signal="pressed" from="Configuracion/Fondo/Aceptar" to="Configuracion" method="_on_Aceptar_pressed"]
+[connection signal="timeout" from="Timer" to="Batalla/Node2D/Mapa" method="_on_Timer_timeout"]
+[connection signal="timeout" from="TimerPerdedor" to="Batalla/Node2D/Mapa" method="_on_TimerPerdedor_timeout"]

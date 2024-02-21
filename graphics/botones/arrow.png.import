@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/arrow.png-329c110af403f2991b914865e67d096d.image"
+
+[deps]
+
+source_file="res://graphics/botones/arrow.png"
+dest_files=[ "res://.import/arrow.png-329c110af403f2991b914865e67d096d.image" ]
+
+[params]
+

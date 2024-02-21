@@ -1,0 +1,407 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Font/ANTQUAB.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://Font/ANTQUABI.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/Conf.gd" type="Script" id=3]
+[ext_resource path="res://Font/DynamicFonts/Fuente30.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Sonidos/Disparo tanque.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sonidos/Voz.wav" type="AudioStream" id=6]
+[ext_resource path="res://graphics/Bordes/Borde3.tres" type="StyleBox" id=7]
+[ext_resource path="res://Sonidos/metal clic.wav" type="AudioStream" id=8]
+[ext_resource path="res://fondos/reslucion.jpg" type="Texture" id=9]
+[ext_resource path="res://shaders/blur.shader" type="Shader" id=11]
+[ext_resource path="res://graphics/botones/BRv.png" type="Texture" id=12]
+[ext_resource path="res://graphics/botones/BRvs.png" type="Texture" id=13]
+[ext_resource path="res://graphics/botones/BRvi.png" type="Texture" id=14]
+[ext_resource path="res://graphics/botones/returns.png" type="Texture" id=15]
+[ext_resource path="res://graphics/botones/returni.png" type="Texture" id=16]
+[ext_resource path="res://graphics/botones/return.png" type="Texture" id=17]
+[ext_resource path="res://Font/DynamicFonts/Fuente26.tres" type="DynamicFont" id=18]
+[ext_resource path="res://Sonidos/Explosion mina.wav" type="AudioStream" id=19]
+[ext_resource path="res://graphics/Bordes/Borde2.tres" type="StyleBox" id=20]
+[ext_resource path="res://graphics/Bordes/Borde.tres" type="StyleBox" id=21]
+[ext_resource path="res://graphics/themaPopup.tres" type="Theme" id=22]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 11 )
+shader_param/amount = 1.25
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 11 )
+shader_param/amount = 1.25
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 40
+font_data = ExtResource( 1 )
+
+[node name="Node" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelSonido" type="Panel" parent="Control"]
+material = SubResource( 1 )
+anchor_left = 0.366
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelSonido"]
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.8
+anchor_bottom = 0.7
+margin_left = -0.4608
+margin_top = 0.199999
+margin_right = -60.7552
+margin_bottom = -0.199982
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="Control/PanelSonido/VBoxContainer"]
+margin_right = 426.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 18 )
+text = "Volumen general"
+
+[node name="VolGeneral" type="HSlider" parent="Control/PanelSonido/VBoxContainer"]
+margin_top = 47.0
+margin_right = 426.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_stretch_ratio = 0.0
+min_value = -60.0
+max_value = 0.0
+
+[node name="Label" type="Label" parent="Control/PanelSonido/VBoxContainer"]
+margin_top = 92.0
+margin_right = 426.0
+margin_bottom = 124.0
+custom_fonts/font = ExtResource( 18 )
+text = "Volumen de música"
+
+[node name="VolMusica" type="HSlider" parent="Control/PanelSonido/VBoxContainer"]
+margin_top = 139.0
+margin_right = 426.0
+margin_bottom = 169.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_stretch_ratio = 0.0
+min_value = -40.0
+max_value = 0.0
+
+[node name="Label2" type="Label" parent="Control/PanelSonido/VBoxContainer"]
+margin_top = 184.0
+margin_right = 426.0
+margin_bottom = 216.0
+custom_fonts/font = ExtResource( 18 )
+text = "Volumen de disparos"
+
+[node name="VolDisparos" type="HSlider" parent="Control/PanelSonido/VBoxContainer"]
+margin_top = 231.0
+margin_right = 426.0
+margin_bottom = 261.0
+rect_min_size = Vector2( 0, 30 )
+min_value = -60.0
+max_value = 0.0
+
+[node name="Label5" type="Label" parent="Control/PanelSonido/VBoxContainer"]
+margin_top = 276.0
+margin_right = 426.0
+margin_bottom = 308.0
+custom_fonts/font = ExtResource( 18 )
+text = "Volumen de explosiones"
+
+[node name="VolExplosiones" type="HSlider" parent="Control/PanelSonido/VBoxContainer"]
+margin_top = 323.0
+margin_right = 426.0
+margin_bottom = 353.0
+rect_min_size = Vector2( 0, 30 )
+min_value = -60.0
+max_value = 0.0
+
+[node name="Label3" type="Label" parent="Control/PanelSonido/VBoxContainer"]
+margin_top = 368.0
+margin_right = 426.0
+margin_bottom = 400.0
+custom_fonts/font = ExtResource( 18 )
+text = "Volumen de voz"
+
+[node name="VolVoz" type="HSlider" parent="Control/PanelSonido/VBoxContainer"]
+margin_top = 415.0
+margin_right = 426.0
+margin_bottom = 445.0
+rect_min_size = Vector2( 0, 30 )
+min_value = -60.0
+max_value = 6.0
+value = 6.0
+
+[node name="ContAcepSonido" type="Panel" parent="Control/PanelSonido"]
+visible = false
+anchor_left = 0.3
+anchor_top = 0.85
+anchor_right = 0.7
+anchor_bottom = 0.9
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AceptarSonido" type="TextureButton" parent="Control/PanelSonido/ContAcepSonido"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 14 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/PanelSonido/ContAcepSonido"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "Aceptar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelVideo" type="Panel" parent="Control"]
+visible = false
+material = SubResource( 2 )
+anchor_left = 0.366
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelVideo"]
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.6
+anchor_bottom = 0.95
+margin_left = 1.52588e-05
+margin_top = 1.90735e-06
+margin_right = 1.93118
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/PanelVideo/VBoxContainer"]
+margin_right = 367.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 3 )
+text = "Tamaño de pantalla:"
+
+[node name="Resolucion" type="OptionButton" parent="Control/PanelVideo/VBoxContainer"]
+margin_top = 64.0
+margin_right = 367.0
+margin_bottom = 111.0
+theme = ExtResource( 22 )
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/normal = ExtResource( 21 )
+custom_fonts/font = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Control/PanelVideo/VBoxContainer"]
+margin_top = 126.0
+margin_right = 367.0
+margin_bottom = 175.0
+custom_fonts/font = SubResource( 3 )
+text = "Pantalla completa:"
+
+[node name="CheckBox" type="CheckBox" parent="Control/PanelVideo/VBoxContainer"]
+margin_top = 190.0
+margin_right = 367.0
+margin_bottom = 214.0
+pressed = true
+
+[node name="ContAcepVideo" type="Panel" parent="Control/PanelVideo"]
+visible = false
+anchor_left = 0.3
+anchor_top = 0.7
+anchor_right = 0.7
+anchor_bottom = 0.75
+margin_left = 1.52588e-05
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AceptarVideo" type="TextureButton" parent="Control/PanelVideo/ContAcepVideo"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 14 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/PanelVideo/ContAcepVideo"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "Aceptar"
+align = 1
+valign = 1
+
+[node name="VBoxContainer1" type="Control" parent="Control"]
+anchor_right = 0.333
+anchor_bottom = 0.1
+margin_right = 12.0
+
+[node name="Sonido" type="TextureButton" parent="Control/VBoxContainer1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 70 )
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 14 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/VBoxContainer1/Sonido"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.5
+margin_top = -24.5
+margin_right = 64.5
+margin_bottom = 24.5
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 5
+text = "Sonido"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="Control" parent="Control"]
+anchor_top = 0.2
+anchor_right = 0.333
+anchor_bottom = 0.3
+margin_right = 12.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Video" type="TextureButton" parent="Control/VBoxContainer2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 70 )
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 14 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/VBoxContainer2/Video"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -55.0
+margin_top = -26.7439
+margin_right = 55.0
+margin_bottom = 22.2561
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 5
+text = "Video"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="clic" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource( 8 )
+bus = "Click"
+
+[node name="themeTest" type="AudioStreamPlayer" parent="Control"]
+bus = "Musica"
+
+[node name="disparos" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource( 5 )
+bus = "Disparos"
+
+[node name="explosiones" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource( 19 )
+bus = "Explosiones"
+
+[node name="voz" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource( 6 )
+bus = "Voz"
+
+[node name="Control2" type="Control" parent="."]
+anchor_right = 0.035
+anchor_bottom = 0.04
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Regresa" type="TextureButton" parent="Control2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 14.805
+margin_top = 14.8049
+margin_right = 14.805
+margin_bottom = 14.8049
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 16 )
+[connection signal="value_changed" from="Control/PanelSonido/VBoxContainer/VolGeneral" to="Control" method="_on_VolGeneral_value_changed"]
+[connection signal="value_changed" from="Control/PanelSonido/VBoxContainer/VolMusica" to="Control" method="_on_VolMusica_value_changed"]
+[connection signal="value_changed" from="Control/PanelSonido/VBoxContainer/VolDisparos" to="Control" method="_on_VolDisparos_value_changed"]
+[connection signal="value_changed" from="Control/PanelSonido/VBoxContainer/VolExplosiones" to="Control" method="_on_VolExplosiones_value_changed"]
+[connection signal="value_changed" from="Control/PanelSonido/VBoxContainer/VolVoz" to="Control" method="_on_VolVoz_value_changed"]
+[connection signal="pressed" from="Control/PanelSonido/ContAcepSonido/AceptarSonido" to="Control" method="_on_AceptarSonido_pressed"]
+[connection signal="item_selected" from="Control/PanelVideo/VBoxContainer/Resolucion" to="Control" method="_on_Resolucion_item_selected"]
+[connection signal="pressed" from="Control/PanelVideo/VBoxContainer/CheckBox" to="Control" method="_on_CheckBox_pressed"]
+[connection signal="pressed" from="Control/PanelVideo/ContAcepVideo/AceptarVideo" to="Control" method="_on_AceptarVideo_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer1/Sonido" to="Control" method="_on_Sonido_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer2/Video" to="Control" method="_on_Video_pressed"]
+[connection signal="pressed" from="Control2/Regresa" to="Control" method="_on_Regresa_pressed"]

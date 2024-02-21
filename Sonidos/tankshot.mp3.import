@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/tankshot.mp3-3ca37896f77202e3c3259d94575f8868.mp3str"
+
+[deps]
+
+source_file="res://Sonidos/tankshot.mp3"
+dest_files=[ "res://.import/tankshot.mp3-3ca37896f77202e3c3259d94575f8868.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

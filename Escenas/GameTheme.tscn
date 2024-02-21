@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/GameTheme.gd" type="Script" id=2]
+
+[node name="theme" type="AudioStreamPlayer"]
+pause_mode = 2
+bus = "Musica"
+script = ExtResource( 2 )
+[connection signal="finished" from="." to="." method="_on_theme_finished"]

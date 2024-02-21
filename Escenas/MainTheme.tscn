@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sonidos/introTBmn.wav" type="AudioStream" id=1]
+[ext_resource path="res://Scripts/MainTheme.gd" type="Script" id=2]
+
+[node name="theme" type="AudioStreamPlayer"]
+pause_mode = 2
+stream = ExtResource( 1 )
+bus = "Musica"
+script = ExtResource( 2 )
+[connection signal="finished" from="." to="." method="_on_theme_finished"]

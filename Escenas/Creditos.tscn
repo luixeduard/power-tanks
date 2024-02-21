@@ -1,0 +1,202 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Font/CGF Locust Resistance.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fondos/creds.jpg" type="Texture" id=2]
+[ext_resource path="res://Scripts/Creditos.gd" type="Script" id=3]
+[ext_resource path="res://fondos/crds.png" type="Texture" id=4]
+[ext_resource path="res://Sonidos/trust.ogg" type="AudioStream" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_color = Color( 0.741176, 0.0392157, 0.937255, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "cascada"
+length = 90.0
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("final:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 84.95, 89.95 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -60.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 85 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 771 ), Vector2( 0, -2781 ) ]
+}
+
+[node name="Node2D" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_right = 1302.0
+margin_bottom = 754.0
+color = Color( 0.356863, 0.0352941, 0.247059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color( 0.403922, 0.0392157, 0.552941, 1 )
+light_mask = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -3501.0
+margin_bottom = -312.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.603922, 0.447059, 0.631373, 1 )
+custom_colors/font_color_shadow = Color( 0.752941, 0.705882, 0.705882, 1 )
+text = "Gracias por jugar
+nuestro juego
+
+equipo tecnico
+
+Luis Eduardo Salas
+
+Hector Ruiz Benavides
+
+Axel Villa Garcia
+
+Arte
+Hector Ruiz Benavides
+
+programadores
+
+luis eduardo salas
+
+axel villa garcia
+
+musica
+
+figure 09	
+por linking park
+
+final mascarade
+por linking park
+
+trust
+por megadeth
+
+battery
+por metallica
+
+blow me away
+por breaking benjamin
+
+all out life
+por slipknot
+
+the unforgiven
+por metallica
+
+the only thing they fear is you
+ por mick gordon
+
+breaking the covenant
+por halo 2 anniversary
+
+do i wanna know
+por artic monkeys
+
+royalty free
+porBustin Loose
+
+Arrangements
+from the melodics
+
+hostile
+por Rapck
+
+gary vs david
+por regular show
+
+harder, better, faster, stronger
+por daft punk
+
+intro
+de the batman
+
+you want a battle
+por bullet for my vallentine
+
+
+
+
+
+
+
+
+
+
+
+hasta la proxima
+power tank"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="cred" type="AnimationPlayer" parent="."]
+anims/cascada = SubResource( 2 )
+
+[node name="deg1" type="TextureRect" parent="."]
+margin_left = -204.687
+margin_top = -17.579
+margin_right = 1452.31
+margin_bottom = 155.421
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deg2" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 849.101
+margin_top = 33.9496
+margin_right = 2554.1
+margin_bottom = 172.95
+rect_rotation = 180.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="final" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -0.600037
+autoplay = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

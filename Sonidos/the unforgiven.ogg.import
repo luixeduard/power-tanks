@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/the unforgiven.ogg-195356b4a701018c7e5b46b74fa4932d.oggstr"
+
+[deps]
+
+source_file="res://Sonidos/the unforgiven.ogg"
+dest_files=[ "res://.import/the unforgiven.ogg-195356b4a701018c7e5b46b74fa4932d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

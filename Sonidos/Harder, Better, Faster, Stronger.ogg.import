@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Harder, Better, Faster, Stronger.ogg-85ec73500689bc6514bad57c0ec0b53d.oggstr"
+
+[deps]
+
+source_file="res://Sonidos/Harder, Better, Faster, Stronger.ogg"
+dest_files=[ "res://.import/Harder, Better, Faster, Stronger.ogg-85ec73500689bc6514bad57c0ec0b53d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

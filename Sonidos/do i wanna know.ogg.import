@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/do i wanna know.ogg-e3d4f20c56018aab29331c7db2ee3c60.oggstr"
+
+[deps]
+
+source_file="res://Sonidos/do i wanna know.ogg"
+dest_files=[ "res://.import/do i wanna know.ogg-e3d4f20c56018aab29331c7db2ee3c60.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
